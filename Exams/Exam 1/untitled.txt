@@ -1,4 +1,11 @@
 
+##building the model
+rf_md2 = RandomForestRegressor(n_estimators=500 , max_depth=3, min_samples_leaf= 5, min_samples_split= 10).fit(X_train_2, Y_train)
 
-'Healthcare', 'Engineer', 'Lawyer', 'Entertainment', 'Artist',
-       'Executive', 'Doctor', 'Homemaker', 'Marketing',
+##predicting on test
+RF_pred_2 = RF_md_2.predict(X_test_2)
+
+##changing liklihoods to labels 
+mse2 = mean_squared_error(Y_test, RF_pred_2)
+RF_labels_2 = np.sqrt(mse2)
+print('The RMSE of model 2 is:', RF_labels_2)
