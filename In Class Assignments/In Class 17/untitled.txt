@@ -1,0 +1,12 @@
+##engineering features for the decision tree model
+validation['interaction_1'] = np.where(((validation['satisfaction_level'] >= .115) & 
+                                     (validation['satisfaction_level'] <= .465) & 
+                                     (validation['number_project'] > 2.5)), 1, 0)
+
+validation['interaction_2'] = np.where(((validation['satisfaction_level'] <= .465) & 
+                                     (validation['number_project'] <= 2.5) & 
+                                     (validation['last_evaluation'] <= .575)), 1, 0)
+
+validation['interaction_3'] = np.where(((validation['satisfaction_level'] > .465) & 
+                                     (validation['time_spend_company'] <= 4.5) & 
+                                     (validation['average_montly_hours'] <= 290.5)), 1, 0)
