@@ -1,0 +1,21 @@
+### ADABOOST
+ADA_param_grid = {'n_estimators': [100, 300],
+                  'estimator__min_samples_split': [10, 15],
+                  'estimator__min_samples_leaf': [5, 7],
+                  'estimator__max_depth': [3, 5, 7],
+                  'learning_rate': [0.001, 0.01, 0.1]}
+
+##top 5 variables
+ADA_grid_search_1 = RandomizedSearchCV(estimator = AdaBoostClassifier(), param_grid = ADA_param_grid, cv = 3, 
+                                scoring = my_scorer).fit(X_train_5, Y_train)
+print('The best params with ADAboost and RandomizedSearchCV for the top 5 variables is:', ADA_grid_search_1.best_params_ )
+
+##top 6 variables
+ADA_grid_search_2 = RandomizedSearchCV(estimator = AdaBoostClassifier(), param_grid = ADA_param_grid, cv = 3, 
+                                scoring = my_scorer).fit(X_train_6, Y_train)
+print('The best params with ADAboost and RandomizedSearchCV for the top 6 variables is:', ADA_grid_search_2.best_params_ )
+
+##top 7 variables
+ADA_grid_search_3 = RandomizedSearchCV(estimator = AdaBoostClassifier(), param_grid = ADA_param_grid, cv = 3, 
+                                scoring = my_scorer).fit(X_train_7, Y_train)
+print('The best params with ADAboost and RandomizedSearchCV for the top 7 variables is:', ADA_grid_search_3.best_params_ )
